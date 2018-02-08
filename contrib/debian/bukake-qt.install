@@ -1,0 +1,6 @@
+usr/local/bin/bukake-qt usr/bin
+share/pixmaps/bukake32.xpm usr/share/pixmaps
+share/pixmaps/bukake16.xpm usr/share/pixmaps
+share/pixmaps/bukake128.png usr/share/pixmaps
+debian/bukake-qt.desktop usr/share/applications
+debian/bukake-qt.protocol usr/share/kde4/services/

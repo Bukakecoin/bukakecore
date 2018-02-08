@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/bukake_bg.qm</file>
+        <file alias="de">locale/bukake_de.qm</file>
+        <file alias="en">locale/bukake_en.qm</file>
+        <file alias="es">locale/bukake_es.qm</file>
+        <file alias="fi">locale/bukake_fi.qm</file>
+        <file alias="fr">locale/bukake_fr.qm</file>
+        <file alias="it">locale/bukake_it.qm</file>
+        <file alias="ja">locale/bukake_ja.qm</file>
+        <file alias="pl">locale/bukake_pl.qm</file>
+        <file alias="pt">locale/bukake_pt.qm</file>
+        <file alias="ru">locale/bukake_ru.qm</file>
+        <file alias="sk">locale/bukake_sk.qm</file>
+        <file alias="sv">locale/bukake_sv.qm</file>
+        <file alias="vi">locale/bukake_vi.qm</file>
+        <file alias="zh_CN">locale/bukake_zh_CN.qm</file>
+        <file alias="zh_TW">locale/bukake_zh_TW.qm</file>
+    </qresource>
+</RCC>

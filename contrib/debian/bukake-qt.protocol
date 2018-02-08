@@ -1,0 +1,11 @@
+[Protocol]
+exec=bukake-qt '%u'
+protocol=bukake
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false
