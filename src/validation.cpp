@@ -1240,8 +1240,12 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
         return 0 * COIN;
     }
 
+    if(nPrevHeight > 26000) {
+    nSubsidyBase = 120;
+    }else{
+     nSubsidyBase = 2;
+    }
 
-    nSubsidyBase = 2;
 
     // LogPrintf("height %u diff %4.2f reward %d\n", nPrevHeight, dDiff, nSubsidyBase);
     CAmount nSubsidy = nSubsidyBase * COIN;
@@ -1259,10 +1263,14 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
-    CAmount ret = blockValue/2; // start at 50%
+    CAmount ret = blockValue; // start at 50%
 
-    int nMNPIBlock = Params().GetConsensus().nMasternodePaymentsIncreaseBlock;
-    int nMNPIPeriod = Params().GetConsensus().nMasternodePaymentsIncreasePeriod;
+
+    if (nHeight > 30000){
+        ret = ret/100*75;
+    }else{
+        ret = ret/2;
+    }
 
 
 
