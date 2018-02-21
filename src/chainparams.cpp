@@ -142,7 +142,7 @@ public:
 
         //vFixedSeeds.clear();
         //vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("bankitt.network", "dnsseed.bankitt.network"));
+        vSeeds.push_back(CDNSSeedData("bankitt.xyz", "dnsseed.bankitt.xyz"));
 
 
         // Bukake addresses start with 'S'
