@@ -1,5 +1,5 @@
 ---
-name: "bukake-dmg-signer"
+name: "bankitt-dmg-signer"
 suites:
 - "trusty"
 architectures:
@@ -8,10 +8,10 @@ packages:
 - "faketime"
 reference_datetime: "2017-01-01 00:00:00"
 remotes:
-- "url": "https://github.com/bukakepay/bukake-detached-sigs.git"
+- "url": "https://github.com/bankittpay/bankitt-detached-sigs.git"
   "dir": "signature"
 files:
-- "bukake-osx-unsigned.tar.gz"
+- "bankitt-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -28,8 +28,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=bukake-osx-unsigned.tar.gz
-  SIGNED=bukake-osx-signed.dmg
+  UNSIGNED=bankitt-osx-unsigned.tar.gz
+  SIGNED=bankitt-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   ./detached-sig-apply.sh ${UNSIGNED} signature/osx

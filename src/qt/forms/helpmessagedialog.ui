@@ -76,7 +76,7 @@
         <bool>false</bool>
        </property>
        <property name="pixmap">
-        <pixmap resource="../bukake.qrc">:/images/drkblue/about</pixmap>
+        <pixmap resource="../bankitt.qrc">:/images/drkblue/about</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -172,7 +172,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../bukake.qrc"/>
+  <include location="../bankitt.qrc"/>
  </resources>
  <connections>
   <connection>

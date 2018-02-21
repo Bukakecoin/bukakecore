@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bukake-config.h"
+#include "config/bankitt-config.h"
 #endif
 
 #include "optionsdialog.h"
@@ -90,11 +90,11 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     
     /* Theme selector */
-    ui->theme->addItem(QString("BKK-light"), QVariant("light"));
-    ui->theme->addItem(QString("BKK-light-hires"), QVariant("light-hires"));
-    ui->theme->addItem(QString("BKK-blue"), QVariant("drkblue"));
-    ui->theme->addItem(QString("BKK-Crownium"), QVariant("crownium"));
-    ui->theme->addItem(QString("BKK-traditional"), QVariant("trad"));
+    ui->theme->addItem(QString("BKT-light"), QVariant("light"));
+    ui->theme->addItem(QString("BKT-light-hires"), QVariant("light-hires"));
+    ui->theme->addItem(QString("BKT-blue"), QVariant("drkblue"));
+    ui->theme->addItem(QString("BKT-Crownium"), QVariant("crownium"));
+    ui->theme->addItem(QString("BKT-traditional"), QVariant("trad"));
     
     /* Language selector */
     QDir translations(":translations");

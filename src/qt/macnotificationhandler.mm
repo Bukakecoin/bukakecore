@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.bukake.Bukake-Qt";
+        return @"org.bankitt.Bukake-Qt";
     } else {
         return [self __bundleIdentifier];
     }

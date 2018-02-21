@@ -4,7 +4,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "netbase.h"
-#include "test/test_bukake.h"
+#include "test/test_bankitt.h"
 
 #include <string>
 

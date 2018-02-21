@@ -11,7 +11,7 @@ the same, tested dependencies are used and statically built into the executable.
 Multiple developers build the source code by following a specific descriptor
 ("recipe"), cryptographically sign the result, and upload the resulting signature.
 These results are compared and only if they match, the build is accepted and uploaded
-to bukake.org.
+to bankitt.org.
 
 More independent Gitian builders are needed, which is why this guide exists.
 It is preferred you follow these steps yourself instead of using someone else's
@@ -26,7 +26,7 @@ Table of Contents
 - [Installing Gitian](#installing-gitian)
 - [Setting up the Gitian image](#setting-up-the-gitian-image)
 - [Getting and building the inputs](#getting-and-building-the-inputs)
-- [Building Bukake Core](#building-bukake-core)
+- [Building Bukake Core](#building-bankitt-core)
 - [Building an alternative repository](#building-an-alternative-repository)
 - [Signing externally](#signing-externally)
 - [Uploading signatures](#uploading-signatures)
@@ -304,7 +304,7 @@ Clone the git repositories for Bukake Core and Gitian.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/bukakepay/bukake
+git clone https://github.com/bankittpay/bankitt
 ```
 
 Setting up the Gitian image
@@ -363,12 +363,12 @@ tail -f var/build.log
 Output from `gbuild` will look something like
 
 ```bash
-    Initialized empty Git repository in /home/debian/gitian-builder/inputs/bukake/.git/
+    Initialized empty Git repository in /home/debian/gitian-builder/inputs/bankitt/.git/
     remote: Counting objects: 57959, done.
     remote: Total 57959 (delta 0), reused 0 (delta 0), pack-reused 57958
     Receiving objects: 100% (57959/57959), 53.76 MiB | 484.00 KiB/s, done.
     Resolving deltas: 100% (41590/41590), done.
-    From https://github.com/bukakepay/bukake
+    From https://github.com/bankittpay/bankitt
     ... (new tags, new branch etc)
     --- Building for precise amd64 ---
     Stopping target if it is up
@@ -394,18 +394,18 @@ and inputs.
 
 For example:
 ```bash
-URL=https://github.com/crowning-/bukake.git
+URL=https://github.com/crowning-/bankitt.git
 COMMIT=b616fb8ef0d49a919b72b0388b091aaec5849b96
-./bin/gbuild --commit bukake=${COMMIT} --url bukake=${URL} ../bukake/contrib/gitian-descriptors/gitian-linux.yml
-./bin/gbuild --commit bukake=${COMMIT} --url bukake=${URL} ../bukake/contrib/gitian-descriptors/gitian-win.yml
-./bin/gbuild --commit bukake=${COMMIT} --url bukake=${URL} ../bukake/contrib/gitian-descriptors/gitian-osx.yml
+./bin/gbuild --commit bankitt=${COMMIT} --url bankitt=${URL} ../bankitt/contrib/gitian-descriptors/gitian-linux.yml
+./bin/gbuild --commit bankitt=${COMMIT} --url bankitt=${URL} ../bankitt/contrib/gitian-descriptors/gitian-win.yml
+./bin/gbuild --commit bankitt=${COMMIT} --url bankitt=${URL} ../bankitt/contrib/gitian-descriptors/gitian-osx.yml
 ```
 
 Building fully offline
 -----------------------
 
 For building fully offline including attaching signatures to unsigned builds, the detached-sigs repository
-and the bukake git repository with the desired tag must both be available locally, and then gbuild must be
+and the bankitt git repository with the desired tag must both be available locally, and then gbuild must be
 told where to find them. It also requires an apt-cacher-ng which is fully-populated but set to offline mode, or
 manually disabling gitian-builder's use of apt-get to update the VM build environment.
 
@@ -424,7 +424,7 @@ cd /path/to/gitian-builder
 LXC_ARCH=amd64 LXC_SUITE=precise on-target -u root apt-get update
 LXC_ARCH=amd64 LXC_SUITE=precise on-target -u root \
   -e DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends -y install \
-  $( sed -ne '/^packages:/,/[^-] .*/ {/^- .*/{s/"//g;s/- //;p}}' ../bukake/contrib/gitian-descriptors/*|sort|uniq )
+  $( sed -ne '/^packages:/,/[^-] .*/ {/^- .*/{s/"//g;s/- //;p}}' ../bankitt/contrib/gitian-descriptors/*|sort|uniq )
 LXC_ARCH=amd64 LXC_SUITE=precise on-target -u root apt-get -q -y purge grub
 LXC_ARCH=amd64 LXC_SUITE=precise on-target -u root -e DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 ```
@@ -444,12 +444,12 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 ```bash
 
 cd /some/root/path/
-git clone https://github.com/bukakepay/bukake-detached-sigs.git
+git clone https://github.com/bankittpay/bankitt-detached-sigs.git
 
-BTCPATH=/some/root/path/bukake.git
-SIGPATH=/some/root/path/bukake-detached-sigs.git
+BTCPATH=/some/root/path/bankitt.git
+SIGPATH=/some/root/path/bankitt-detached-sigs.git
 
-./bin/gbuild --url bukake=${BTCPATH},signature=${SIGPATH} ../bukake/contrib/gitian-descriptors/gitian-win-signer.yml
+./bin/gbuild --url bankitt=${BTCPATH},signature=${SIGPATH} ../bankitt/contrib/gitian-descriptors/gitian-win-signer.yml
 ```
 
 Signing externally
@@ -464,9 +464,9 @@ When you execute `gsign` you will get an error from GPG, which can be ignored. C
 in `gitian.sigs` to your signing machine and do
 
 ```bash
-    gpg --detach-sign ${VERSION}-linux/${SIGNER}/bukake-linux-build.assert
-    gpg --detach-sign ${VERSION}-win/${SIGNER}/bukake-win-build.assert
-    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/bukake-osx-build.assert
+    gpg --detach-sign ${VERSION}-linux/${SIGNER}/bankitt-linux-build.assert
+    gpg --detach-sign ${VERSION}-win/${SIGNER}/bankitt-win-build.assert
+    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/bankitt-osx-build.assert
 ```
 
 This will create the `.sig` files that can be committed together with the `.assert` files to assert your
@@ -476,6 +476,6 @@ Uploading signatures (not yet implemented)
 ---------------------
 
 In the future it will be possible to push your signatures (both the `.assert` and `.assert.sig` files) to the
-[bukake/gitian.sigs](https://github.com/bukakepay/gitian.sigs/) repository, or if that's not possible to create a pull
+[bankitt/gitian.sigs](https://github.com/bankittpay/gitian.sigs/) repository, or if that's not possible to create a pull
 request.
 There will be an official announcement when this repository is online.

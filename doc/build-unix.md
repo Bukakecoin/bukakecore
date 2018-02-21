@@ -24,7 +24,7 @@ make
 make install # optional
 ```
 
-This will build bukake-qt as well if the dependencies are met.
+This will build bankitt-qt as well if the dependencies are met.
 
 Dependencies
 ---------------------
@@ -116,12 +116,12 @@ libqrencode (optional) can be installed with:
 
     sudo apt-get install libqrencode-dev
 
-Once these are installed, they will be found by configure and a bukake-qt executable will be
+Once these are installed, they will be found by configure and a bankitt-qt executable will be
 built by default.
 
 Notes
 -----
-The release is built with GCC and then "strip bukaked" to strip the debug
+The release is built with GCC and then "strip bankittd" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 
@@ -144,7 +144,7 @@ It is recommended to use Berkeley DB 4.8. If you have to build it yourself:
 ```bash
 BUKAKE_ROOT=$(pwd)
 
-# Pick some path to install BDB to, here we create a directory within the bukake directory
+# Pick some path to install BDB to, here we create a directory within the bankitt directory
 BDB_PREFIX="${BUKAKE_ROOT}/db4"
 mkdir -p $BDB_PREFIX
 
@@ -202,7 +202,7 @@ Hardening enables the following features:
 
     To test that you have built PIE executable, install scanelf, part of paxutils, and use:
 
-    	scanelf -e ./bukaked
+    	scanelf -e ./bankittd
 
     The output should contain:
 
@@ -217,7 +217,7 @@ Hardening enables the following features:
     executable without the non-executable stack protection.
 
     To verify that the stack is non-executable after compiling use:
-    `scanelf -e ./bukaked`
+    `scanelf -e ./bankittd`
 
     the output should contain:
 	STK/REL/PTL

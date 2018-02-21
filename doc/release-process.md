@@ -1,7 +1,7 @@
 Release Process
 ====================
 
-* Update translations, see [translation_process.md](https://github.com/bukakepay/bukake/blob/master/doc/translation_process.md#syncing-with-transifex)
+* Update translations, see [translation_process.md](https://github.com/bankittpay/bankitt/blob/master/doc/translation_process.md#syncing-with-transifex)
 * Update hardcoded [seeds](/contrib/seeds)
 
 * * *
@@ -10,14 +10,14 @@ Release Process
 Check out the source code in the following directory hierarchy.
 
 	cd /path/to/your/toplevel/build
-	git clone https://github.com/bukakepay/gitian.sigs.git
-	git clone https://github.com/bukakepay/bukake-detached-sigs.git
+	git clone https://github.com/bankittpay/gitian.sigs.git
+	git clone https://github.com/bankittpay/bankitt-detached-sigs.git
 	git clone https://github.com/devrandom/gitian-builder.git
-	git clone https://github.com/bukakepay/bukake.git
+	git clone https://github.com/bankittpay/bankitt.git
 
 ### Bukake Core maintainers/release engineers, update (commit) version in sources
 
-	pushd ./bukake
+	pushd ./bankitt
 	contrib/verifysfbinaries/verify.sh
 	configure.ac
 	doc/README*
@@ -40,7 +40,7 @@ Check out the source code in the following directory hierarchy.
 
  Setup Gitian descriptors:
 
-	pushd ./bukake
+	pushd ./bankitt
 	export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
 	export VERSION=(new version, e.g. 0.8.0)
 	git fetch
@@ -76,52 +76,52 @@ Check out the source code in the following directory hierarchy.
 
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
-	make -C ../bukake/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../bankitt/depends download SOURCES_PATH=`pwd`/cache/common
 
 Only missing files will be fetched, so this is safe to re-run for each build.
 
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 ```
-./bin/gbuild --url bukake=/path/to/bukake,signature=/path/to/sigs {rest of arguments}
+./bin/gbuild --url bankitt=/path/to/bankitt,signature=/path/to/sigs {rest of arguments}
 ```
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
 ### Build and sign Bukake Core for Linux, Windows, and OS X:
 
-	./bin/gbuild --commit bukake=v${VERSION} ../bukake/contrib/gitian-descriptors/gitian-linux.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bukake/contrib/gitian-descriptors/gitian-linux.yml
-	mv build/out/bukake-*.tar.gz build/out/src/bukake-*.tar.gz ../
+	./bin/gbuild --commit bankitt=v${VERSION} ../bankitt/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bankitt/contrib/gitian-descriptors/gitian-linux.yml
+	mv build/out/bankitt-*.tar.gz build/out/src/bankitt-*.tar.gz ../
 
-	./bin/gbuild --commit bukake=v${VERSION} ../bukake/contrib/gitian-descriptors/gitian-win.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../bukake/contrib/gitian-descriptors/gitian-win.yml
-	mv build/out/bukake-*-win-unsigned.tar.gz inputs/bukake-win-unsigned.tar.gz
-	mv build/out/bukake-*.zip build/out/bukake-*.exe ../
+	./bin/gbuild --commit bankitt=v${VERSION} ../bankitt/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../bankitt/contrib/gitian-descriptors/gitian-win.yml
+	mv build/out/bankitt-*-win-unsigned.tar.gz inputs/bankitt-win-unsigned.tar.gz
+	mv build/out/bankitt-*.zip build/out/bankitt-*.exe ../
 
-	./bin/gbuild --commit bukake=v${VERSION} ../bukake/contrib/gitian-descriptors/gitian-osx.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../bukake/contrib/gitian-descriptors/gitian-osx.yml
-	mv build/out/bukake-*-osx-unsigned.tar.gz inputs/bukake-osx-unsigned.tar.gz
-	mv build/out/bukake-*.tar.gz build/out/bukake-*.dmg ../
+	./bin/gbuild --commit bankitt=v${VERSION} ../bankitt/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../bankitt/contrib/gitian-descriptors/gitian-osx.yml
+	mv build/out/bankitt-*-osx-unsigned.tar.gz inputs/bankitt-osx-unsigned.tar.gz
+	mv build/out/bankitt-*.tar.gz build/out/bankitt-*.dmg ../
 	popd
 
   Build output expected:
 
-  1. source tarball (bukake-${VERSION}.tar.gz)
-  2. linux 32-bit and 64-bit dist tarballs (bukake-${VERSION}-linux[32|64].tar.gz)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (bukake-${VERSION}-win[32|64]-setup-unsigned.exe, bukake-${VERSION}-win[32|64].zip)
-  4. OS X unsigned installer and dist tarball (bukake-${VERSION}-osx-unsigned.dmg, bukake-${VERSION}-osx64.tar.gz)
+  1. source tarball (bankitt-${VERSION}.tar.gz)
+  2. linux 32-bit and 64-bit dist tarballs (bankitt-${VERSION}-linux[32|64].tar.gz)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (bankitt-${VERSION}-win[32|64]-setup-unsigned.exe, bankitt-${VERSION}-win[32|64].zip)
+  4. OS X unsigned installer and dist tarball (bankitt-${VERSION}-osx-unsigned.dmg, bankitt-${VERSION}-osx64.tar.gz)
   5. Gitian signatures (in gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
   Add other gitian builders keys to your gpg keyring
 
-	gpg --import ../bukake/contrib/gitian-downloader/*.pgp
+	gpg --import ../bankitt/contrib/gitian-downloader/*.pgp
 
   Verify the signatures
 
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../bukake/contrib/gitian-descriptors/gitian-linux.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../bukake/contrib/gitian-descriptors/gitian-win.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../bukake/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../bankitt/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../bankitt/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../bankitt/contrib/gitian-descriptors/gitian-osx.yml
 
 	popd
 
@@ -139,25 +139,25 @@ Commit your signature to gitian.sigs:
 
   Wait for Windows/OS X detached signatures:
 	Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-	Detached signatures will then be committed to the [bukake-detached-sigs](https://github.com/bukakepay/bukake-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+	Detached signatures will then be committed to the [bankitt-detached-sigs](https://github.com/bankittpay/bankitt-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
   Create (and optionally verify) the signed OS X binary:
 
 	pushd ./gitian-builder
-	./bin/gbuild -i --commit signature=v${VERSION} ../bukake/contrib/gitian-descriptors/gitian-osx-signer.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../bukake/contrib/gitian-descriptors/gitian-osx-signer.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../bukake/contrib/gitian-descriptors/gitian-osx-signer.yml
-	mv build/out/bukake-osx-signed.dmg ../bukake-${VERSION}-osx.dmg
+	./bin/gbuild -i --commit signature=v${VERSION} ../bankitt/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../bankitt/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../bankitt/contrib/gitian-descriptors/gitian-osx-signer.yml
+	mv build/out/bankitt-osx-signed.dmg ../bankitt-${VERSION}-osx.dmg
 	popd
 
   Create (and optionally verify) the signed Windows binaries:
 
 	pushd ./gitian-builder
-	./bin/gbuild -i --commit signature=v${VERSION} ../bukake/contrib/gitian-descriptors/gitian-win-signer.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../bukake/contrib/gitian-descriptors/gitian-win-signer.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../bukake/contrib/gitian-descriptors/gitian-win-signer.yml
-	mv build/out/bukake-*win64-setup.exe ../bukake-${VERSION}-win64-setup.exe
-	mv build/out/bukake-*win32-setup.exe ../bukake-${VERSION}-win32-setup.exe
+	./bin/gbuild -i --commit signature=v${VERSION} ../bankitt/contrib/gitian-descriptors/gitian-win-signer.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../bankitt/contrib/gitian-descriptors/gitian-win-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../bankitt/contrib/gitian-descriptors/gitian-win-signer.yml
+	mv build/out/bankitt-*win64-setup.exe ../bankitt-${VERSION}-win64-setup.exe
+	mv build/out/bankitt-*win32-setup.exe ../bankitt-${VERSION}-win32-setup.exe
 	popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -182,21 +182,21 @@ rm SHA256SUMS
 (the digest algorithm is forced to sha256 to avoid confusion of the `Hash:` header that GPG adds with the SHA256 used for the files)
 Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spurious/nonsensical entry.
 
-- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the bukake.org server
+- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the bankitt.org server
 
-- Update bukake.org
+- Update bankitt.org
 
 - Announce the release:
 
-  - Release on Bukake forum: https://www.bukake.org/forum/topic/official-announcements.54/
+  - Release on Bukake forum: https://www.bankitt.org/forum/topic/official-announcements.54/
 
   - Bukake-development mailing list
 
-  - Update title of #bukakepay on Freenode IRC
+  - Update title of #bankittpay on Freenode IRC
 
   - Optionally reddit /r/Bukakepay, ... but this will usually sort out itself
 
-- Notify flare so that he can start building [the PPAs](https://launchpad.net/~bukake.org/+archive/ubuntu/bukake)
+- Notify flare so that he can start building [the PPAs](https://launchpad.net/~bankitt.org/+archive/ubuntu/bankitt)
 
 - Add release notes for the new version to the directory `doc/release-notes` in git master
 

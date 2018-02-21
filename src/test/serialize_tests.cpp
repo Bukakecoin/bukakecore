@@ -5,7 +5,7 @@
 #include "serialize.h"
 #include "streams.h"
 #include "hash.h"
-#include "test/test_bukake.h"
+#include "test/test_bankitt.h"
 
 #include <stdint.h>
 

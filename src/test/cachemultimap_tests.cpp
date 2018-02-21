@@ -2,7 +2,7 @@
 
 #include "cachemultimap.h"
 
-#include "test/test_bukake.h"
+#include "test/test_bankitt.h"
 
 #include <algorithm>
 #include <iostream>

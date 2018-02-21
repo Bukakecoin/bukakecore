@@ -1,7 +1,7 @@
 Bukake Core 0.12.1
 =====================
 
-This is the official reference wallet for Bukake digital currency and comprises the backbone of the Bukake peer-to-peer network. You can [download Bukake Core](https://www.bukake.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Bukake digital currency and comprises the backbone of the Bukake peer-to-peer network. You can [download Bukake Core](https://www.bankitt.org/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
@@ -11,12 +11,12 @@ The following are some helpful notes on how to run Bukake on your native platfor
 
 Unpack the files into a directory and run:
 
-- `bin/bukake-qt` (GUI) or
-- `bin/bukaked` (headless)
+- `bin/bankitt-qt` (GUI) or
+- `bin/bankittd` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run bukake-qt.exe.
+Unpack the files into a directory, and then run bankitt-qt.exe.
 
 ### OS X
 
@@ -24,10 +24,10 @@ Drag Bukake-Qt to your applications folder, and then run Bukake-Qt.
 
 ### Need Help?
 
-* See the [Bukake documentation](https://bukakepay.atlassian.net/wiki/display/DOC)
+* See the [Bukake documentation](https://bankittpay.atlassian.net/wiki/display/DOC)
 for help and more information.
-* Ask for help on [#bukakepay](http://webchat.freenode.net?channels=bukakepay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=bukakepay).
-* Ask for help on the [BukakeTalk](https://bukaketalk.org/) forums.
+* Ask for help on [#bankittpay](http://webchat.freenode.net?channels=bankittpay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=bankittpay).
+* Ask for help on the [BukakeTalk](https://bankitttalk.org/) forums.
 
 Building
 ---------------------
@@ -57,8 +57,8 @@ The Bukake Core repo's [root README](/README.md) contains relevant information o
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on the [BukakeTalk](https://bukaketalk.org/) forums, in the Development & Technical Discussion board.
-* Discuss on [#bukakepay](http://webchat.freenode.net/?channels=bukakepay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=bukakepay).
+* Discuss on the [BukakeTalk](https://bankitttalk.org/) forums, in the Development & Technical Discussion board.
+* Discuss on [#bankittpay](http://webchat.freenode.net/?channels=bankittpay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=bankittpay).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

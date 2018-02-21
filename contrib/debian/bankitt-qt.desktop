@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Bukake
+Comment=Bukake P2P Cryptocurrency
+Comment[fr]=Bukake, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Bukake, eşten eşe kriptografik sanal para birimi
+Exec=bankitt-qt %u
+Terminal=false
+Type=Application
+Icon=bankitt128
+MimeType=x-scheme-handler/bankitt;
+Categories=Office;Finance;

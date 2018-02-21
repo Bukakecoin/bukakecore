@@ -11,13 +11,13 @@ with each other, with the help of a P2P network to check for double-spending.
 
 Setup
 -----
-Unpack the files into a directory and run bukake-qt.exe.
+Unpack the files into a directory and run bankitt-qt.exe.
 
 Bukake Core is the original Bukake client and it builds the backbone of the network.
 However, it downloads and stores the entire history of Bukake transactions;
 depending on the speed of your computer and network connection, the synchronization
 process can take anywhere from a few hours to a day or more.
 
-See the bukake wiki at:
-  https://bukakepay.atlassian.net/wiki/
+See the bankitt wiki at:
+  https://bankittpay.atlassian.net/wiki/
 for more help and information.

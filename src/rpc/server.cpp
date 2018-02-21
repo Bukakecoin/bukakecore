@@ -344,19 +344,19 @@ static const CRPCCommand vRPCCommands[] =
 #endif
 
     /* Bukake features */
-    { "bukake",               "masternode",             &masternode,             true  },
-    { "bukake",               "masternodelist",         &masternodelist,         true  },
-    { "bukake",               "masternodebroadcast",    &masternodebroadcast,    true  },
-    { "bukake",               "gobject",                &gobject,                true  },
-    { "bukake",               "getgovernanceinfo",      &getgovernanceinfo,      true  },
-    { "bukake",               "getsuperblockbudget",    &getsuperblockbudget,    true  },
-    { "bukake",               "voteraw",                &voteraw,                true  },
-    { "bukake",               "mnsync",                 &mnsync,                 true  },
-    { "bukake",               "spork",                  &spork,                  true  },
-    { "bukake",               "getpoolinfo",            &getpoolinfo,            true  },
-    { "bukake",               "sentinelping",           &sentinelping,           true  },
+    { "bankitt",               "masternode",             &masternode,             true  },
+    { "bankitt",               "masternodelist",         &masternodelist,         true  },
+    { "bankitt",               "masternodebroadcast",    &masternodebroadcast,    true  },
+    { "bankitt",               "gobject",                &gobject,                true  },
+    { "bankitt",               "getgovernanceinfo",      &getgovernanceinfo,      true  },
+    { "bankitt",               "getsuperblockbudget",    &getsuperblockbudget,    true  },
+    { "bankitt",               "voteraw",                &voteraw,                true  },
+    { "bankitt",               "mnsync",                 &mnsync,                 true  },
+    { "bankitt",               "spork",                  &spork,                  true  },
+    { "bankitt",               "getpoolinfo",            &getpoolinfo,            true  },
+    { "bankitt",               "sentinelping",           &sentinelping,           true  },
 #ifdef ENABLE_WALLET
-    { "bukake",               "privatesend",            &privatesend,            false },
+    { "bankitt",               "privatesend",            &privatesend,            false },
 
     /* Wallet */
     { "wallet",             "keepass",                &keepass,                true },
@@ -580,7 +580,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(const std::string& methodname, const std::string& args)
 {
-    return "> bukake-cli " + methodname + " " + args + "\n";
+    return "> bankitt-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(const std::string& methodname, const std::string& args)

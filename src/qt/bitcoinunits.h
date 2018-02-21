@@ -57,9 +57,9 @@ public:
      */
     enum Unit
     {
-        BKK,
-        mBKK,
-        uBKK,
+        BKT,
+        mBKT,
+        uBKT,
         duffs
     };
 

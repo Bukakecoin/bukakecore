@@ -1,21 +1,21 @@
 
 Debian
 ====================
-This directory contains files used to package bukaked/bukake-qt
-for Debian-based Linux systems. If you compile bukaked/bukake-qt yourself, there are some useful files here.
+This directory contains files used to package bankittd/bankitt-qt
+for Debian-based Linux systems. If you compile bankittd/bankitt-qt yourself, there are some useful files here.
 
-## bukake: URI support ##
+## bankitt: URI support ##
 
 
-bukake-qt.desktop  (Gnome / Open Desktop)
+bankitt-qt.desktop  (Gnome / Open Desktop)
 To install:
 
-	sudo desktop-file-install bukake-qt.desktop
+	sudo desktop-file-install bankitt-qt.desktop
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your bukake-qt binary to `/usr/bin`
-and the `../../share/pixmaps/bukake128.png` to `/usr/share/pixmaps`
+the .desktop file or copy or symlink your bankitt-qt binary to `/usr/bin`
+and the `../../share/pixmaps/bankitt128.png` to `/usr/share/pixmaps`
 
-bukake-qt.protocol (KDE)
+bankitt-qt.protocol (KDE)
 

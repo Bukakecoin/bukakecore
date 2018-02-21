@@ -31,9 +31,9 @@ Possible options:
 
 ```
   -h, --help            show this help message and exit
-  --nocleanup           Leave bukakeds and test.* datadir on exit or error
-  --noshutdown          Don't stop bukakeds after the test execution
-  --srcdir=SRCDIR       Source directory containing bukaked/bukake-cli
+  --nocleanup           Leave bankittds and test.* datadir on exit or error
+  --noshutdown          Don't stop bankittds after the test execution
+  --srcdir=SRCDIR       Source directory containing bankittd/bankitt-cli
                         (default: ../../src)
   --tmpdir=TMPDIR       Root directory for datadirs
   --tracerpc            Print out all RPC calls as they are made
@@ -58,7 +58,7 @@ to recover with:
 
 ```bash
 rm -rf cache
-killall bukaked
+killall bankittd
 ```
 
 Writing tests

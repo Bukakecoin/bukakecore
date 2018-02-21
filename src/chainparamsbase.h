@@ -9,7 +9,7 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between bukake-cli and bukaked)
+ * CBaseChainParams defines the base parameters (shared between bankitt-cli and bankittd)
  * of a given instance of the Bukake system.
  */
 class CBaseChainParams

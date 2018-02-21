@@ -11,7 +11,7 @@ are carried out collectively by the network. Bukake Core is the name of the open
 source software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Bukake Core software, see https://www.bukake.org/get-bukake/.
+the Bukake Core software, see https://www.bankitt.org/get-bankitt/.
 
 
 License
@@ -24,7 +24,7 @@ Development Process
 -------------------
 
 The `master` branch is meant to be stable. Development is normally done in separate branches.
-[Tags](https://github.com/bukakepay/bukake/tags) are created to indicate new official,
+[Tags](https://github.com/bankittpay/bankitt/tags) are created to indicate new official,
 stable release versions of Bukake Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -61,16 +61,16 @@ not straightforward.
 Info
 -------
 Name: Bukake
-Tiker: BKK
+Tiker: BKT
 Algo: neoscrypt
 BlockTime: 1 min
-Block Reward: 2 BKK
+Block Reward: 2 BKT
 Masternode Reward: 50%
 
 Block:
-1: 3000000 BKK
-2 - 114: 0 BKK
-115 - ...: 2 BKK
+1: 3000000 BKT
+2 - 114: 0 BKT
+115 - ...: 2 BKT
 
 RPC port = 6116
 p2p = 1661;

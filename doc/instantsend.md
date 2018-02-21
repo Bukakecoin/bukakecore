@@ -12,8 +12,8 @@ When a "Transaction Lock" occurs the hash of the related transaction is broadcas
 * `zmqpubhashtxlock`: publishes the transaction hash when locked via InstantSend
 
 This mechanism has been integrated into Bitcore-Node-Bukake which allows for notification to be broadcast through Insight API in one of two ways:
-* WebSocket: [https://github.com/bukakepay/insight-api-bukake#web-socket-api](https://github.com/bukakepay/insight-api-bukake#web-socket-api)
-* API: [https://github.com/bukakepay/insight-api-bukake#instantsend-transactions](https://github.com/bukakepay/insight-api-bukake#instantsend-transactions)
+* WebSocket: [https://github.com/bankittpay/insight-api-bankitt#web-socket-api](https://github.com/bankittpay/insight-api-bankitt#web-socket-api)
+* API: [https://github.com/bankittpay/insight-api-bankitt#instantsend-transactions](https://github.com/bankittpay/insight-api-bankitt#instantsend-transactions)
 
 #### Command line option
 

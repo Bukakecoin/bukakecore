@@ -404,7 +404,7 @@ void static BitcoinMiner(const CChainParams& chainparams, CConnman& connman)
 {
     LogPrintf("BukakeMiner -- started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("bukake-miner");
+    RenameThread("bankitt-miner");
 
     unsigned int nExtraNonce = 0;
 

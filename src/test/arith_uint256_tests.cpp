@@ -12,7 +12,7 @@
 #include "arith_uint256.h"
 #include <string>
 #include "version.h"
-#include "test/test_bukake.h"
+#include "test/test_bankitt.h"
 
 BOOST_FIXTURE_TEST_SUITE(arith_uint256_tests, BasicTestingSetup)
 

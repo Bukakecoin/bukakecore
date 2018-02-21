@@ -80,10 +80,10 @@ UniValue importprivkey(const UniValue& params, bool fHelp)
     
     if (fHelp || params.size() < 1 || params.size() > 3)
         throw runtime_error(
-            "importprivkey \"bukakeprivkey\" ( \"label\" rescan )\n"
+            "importprivkey \"bankittprivkey\" ( \"label\" rescan )\n"
             "\nAdds a private key (as returned by dumpprivkey) to your wallet.\n"
             "\nArguments:\n"
-            "1. \"bukakeprivkey\"   (string, required) The private key (see dumpprivkey)\n"
+            "1. \"bankittprivkey\"   (string, required) The private key (see dumpprivkey)\n"
             "2. \"label\"            (string, optional, default=\"\") An optional label\n"
             "3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions\n"
             "\nNote: This call can take minutes to complete if rescan is true.\n"
@@ -550,11 +550,11 @@ UniValue dumpprivkey(const UniValue& params, bool fHelp)
     
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "dumpprivkey \"bukakeaddress\"\n"
-            "\nReveals the private key corresponding to 'bukakeaddress'.\n"
+            "dumpprivkey \"bankittaddress\"\n"
+            "\nReveals the private key corresponding to 'bankittaddress'.\n"
             "Then the importprivkey can be used with this output\n"
             "\nArguments:\n"
-            "1. \"bukakeaddress\"   (string, required) The bukake address for the private key\n"
+            "1. \"bankittaddress\"   (string, required) The bankitt address for the private key\n"
             "\nResult:\n"
             "\"key\"                (string) The private key\n"
             "\nExamples:\n"

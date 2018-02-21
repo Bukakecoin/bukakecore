@@ -4,7 +4,7 @@
 #include "univalue.h"
 #include "utilstrencodings.h"
 
-#include "test/test_bukake.h"
+#include "test/test_bankitt.h"
 
 #include <boost/test/unit_test.hpp>
 

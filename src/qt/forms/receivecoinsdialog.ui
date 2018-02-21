@@ -326,7 +326,7 @@
   <tabstop>removeRequestButton</tabstop>
  </tabstops>
  <resources>
-  <include location="../bukake.qrc"/>
+  <include location="../bankitt.qrc"/>
  </resources>
  <connections/>
 </ui>

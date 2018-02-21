@@ -134,8 +134,8 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no bukake: URI
-    if(!uri.isValid() || uri.scheme() != QString("bukake"))
+    // return if URI is not valid or is no bankitt: URI
+    if(!uri.isValid() || uri.scheme() != QString("bankitt"))
         return false;
 
     SendCoinsRecipient rv;
@@ -184,7 +184,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!BitcoinUnits::parse(BitcoinUnits::BKK, i->second, &rv.amount))
+                if(!BitcoinUnits::parse(BitcoinUnits::BKT, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -204,13 +204,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert bukake:// to bukake:
+    // Convert bankitt:// to bankitt:
     //
-    //    Cannot handle this later, because bukake:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because bankitt:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("bukake://", Qt::CaseInsensitive))
+    if(uri.startsWith("bankitt://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 7, "bukake:");
+        uri.replace(0, 7, "bankitt:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -218,12 +218,12 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 
 QString formatBitcoinURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("bukake:%1").arg(info.address);
+    QString ret = QString("bankitt:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::BKK, info.amount, false, BitcoinUnits::separatorNever));
+        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::BKT, info.amount, false, BitcoinUnits::separatorNever));
         paramCount++;
     }
 
@@ -424,7 +424,7 @@ void openConfigfile()
 {
     boost::filesystem::path pathConfig = GetConfigFile();
 
-    /* Open bukake.conf with the associated application */
+    /* Open bankitt.conf with the associated application */
     if (boost::filesystem::exists(pathConfig))
         QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
 }
@@ -734,8 +734,8 @@ boost::filesystem::path static GetAutostartFilePath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "bukakecore.desktop";
-    return GetAutostartDir() / strprintf("bukakecore-%s.lnk", chain);
+        return GetAutostartDir() / "bankittcore.desktop";
+    return GetAutostartDir() / strprintf("bankittcore-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -774,7 +774,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         std::string chain = ChainNameFromCommandLine();
-        // Write a bukakecore.desktop file to the autostart directory:
+        // Write a bankittcore.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)

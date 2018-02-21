@@ -1,0 +1,6 @@
+usr/local/bin/bankitt-qt usr/bin
+share/pixmaps/bankitt32.xpm usr/share/pixmaps
+share/pixmaps/bankitt16.xpm usr/share/pixmaps
+share/pixmaps/bankitt128.png usr/share/pixmaps
+debian/bankitt-qt.desktop usr/share/applications
+debian/bankitt-qt.protocol usr/share/kde4/services/

@@ -1,11 +1,11 @@
 Sample configuration files for:
 
-SystemD: bukaked.service
-Upstart: bukaked.conf
-OpenRC:  bukaked.openrc
-         bukaked.openrcconf
-CentOS:  bukaked.init
-OS X:    org.bukake.bukaked.plist
+SystemD: bankittd.service
+Upstart: bankittd.conf
+OpenRC:  bankittd.openrc
+         bankittd.openrcconf
+CentOS:  bankittd.init
+OS X:    org.bankitt.bankittd.plist
 
 have been made available to assist packagers in creating node packages here.
 

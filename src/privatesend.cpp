@@ -427,7 +427,7 @@ void ThreadCheckPrivateSend(CConnman& connman)
     fOneThread = true;
 
     // Make this thread recognisable as the PrivateSend thread
-    RenameThread("bukake-ps");
+    RenameThread("bankitt-ps");
 
     unsigned int nTick = 0;
 

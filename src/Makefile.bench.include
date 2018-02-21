@@ -1,17 +1,17 @@
-bin_PROGRAMS += bench/bench_bukake
+bin_PROGRAMS += bench/bench_bankitt
 BENCH_SRCDIR = bench
-BENCH_BINARY = bench/bench_bukake$(EXEEXT)
+BENCH_BINARY = bench/bench_bankitt$(EXEEXT)
 
 
-bench_bench_bukake_SOURCES = \
-  bench/bench_bukake.cpp \
+bench_bench_bankitt_SOURCES = \
+  bench/bench_bankitt.cpp \
   bench/bench.cpp \
   bench/bench.h \
   bench/Examples.cpp
 
-bench_bench_bukake_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
-bench_bench_bukake_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bench_bench_bukake_LDADD = \
+bench_bench_bankitt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
+bench_bench_bankitt_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+bench_bench_bankitt_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -22,15 +22,15 @@ bench_bench_bukake_LDADD = \
   $(LIBUNIVALUE)
 
 if ENABLE_ZMQ
-bench_bench_bukake_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+bench_bench_bankitt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-bench_bench_bukake_LDADD += $(LIBBITCOIN_WALLET)
+bench_bench_bankitt_LDADD += $(LIBBITCOIN_WALLET)
 endif
 
-bench_bench_bukake_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-bench_bench_bukake_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+bench_bench_bankitt_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+bench_bench_bankitt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 CLEAN_BITCOIN_BENCH = bench/*.gcda bench/*.gcno
 
@@ -42,4 +42,4 @@ bench: $(BENCH_BINARY) FORCE
 	$(BENCH_BINARY)
 
 bitcoin_bench_clean : FORCE
-	rm -f $(CLEAN_BITCOIN_BENCH) $(bench_bench_bukake_OBJECTS) $(BENCH_BINARY)
+	rm -f $(CLEAN_BITCOIN_BENCH) $(bench_bench_bankitt_OBJECTS) $(BENCH_BINARY)

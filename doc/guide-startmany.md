@@ -95,7 +95,7 @@ Issue the following:
 Make note of the hash (which is your collateral_output) and index.
 
 ### Enter your Masternode details into your masternode.conf file
-[From the bukake github repo](https://github.com/bukakepay/bukake/blob/master/doc/masternode_conf.md)
+[From the bankitt github repo](https://github.com/bankittpay/bankitt/blob/master/doc/masternode_conf.md)
 
 `masternode.conf` format is a space seperated text file. Each line consisting of an alias, IP address followed by port, masternode private key, collateral output transaction id and collateral output index.
 
@@ -110,20 +110,20 @@ mn01 127.0.0.1:9992 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84
 mn02 127.0.0.2:9992 93WaAb3htPJEV8E9aQcN23Jt97bPex7YvWfgMDTUdWJvzmrMqey aa9f1034d973377a5e733272c3d0eced1de22555ad45d6b24abadff8087948d4 0
 ```
 
-## What about the bukake.conf file?
+## What about the bankitt.conf file?
 
-If you are using a `masternode.conf` file you no longer need the `bukake.conf` file. The exception is if you need custom settings (_thanks oblox_). In that case you **must** remove `masternode=1` from local `bukake.conf` file. This option should be used only to start local Hot masternode now.
+If you are using a `masternode.conf` file you no longer need the `bankitt.conf` file. The exception is if you need custom settings (_thanks oblox_). In that case you **must** remove `masternode=1` from local `bankitt.conf` file. This option should be used only to start local Hot masternode now.
 
-## Update bukake.conf on server
+## Update bankitt.conf on server
 
-If you generated a new masternode private key, you will need to update the remote `bukake.conf` files.
+If you generated a new masternode private key, you will need to update the remote `bankitt.conf` files.
 
 Shut down the daemon and then edit the file.
 
-```nano .bukakecore/bukake.conf```
+```nano .bankittcore/bankitt.conf```
 
 ### Edit the masternodeprivkey
-If you generated a new masternode private key, you will need to update the `masternodeprivkey` value in your remote `bukake.conf` file.
+If you generated a new masternode private key, you will need to update the `masternodeprivkey` value in your remote `bankitt.conf` file.
 
 ## Start your Masternodes
 
@@ -133,9 +133,9 @@ If your remote server is not running, start your remote daemon as you normally w
 
 You can confirm that remote server is on the correct block by issuing
 
-```bukake-cli getinfo```
+```bankitt-cli getinfo```
 
-and comparing with the official explorer at https://explorer.bukake.org/chain/Bukake
+and comparing with the official explorer at https://explorer.bankitt.org/chain/Bukake
 
 ### Local
 
@@ -162,7 +162,7 @@ Example ```masternode start-alias mn01```
 Issue command `masternode status`
 It should return you something like that:
 ```
-bukake-cli masternode status
+bankitt-cli masternode status
 {
     "outpoint" : "<collateral_output>-<collateral_output_index>",
     "service" : "<ipaddress>:<port>",
@@ -174,6 +174,6 @@ Command output should have "_Masternode successfully started_" in its `status` f
 
 ### Local
 
-Search your Masternodes on https://bukakeninja.pl/masternodes.html
+Search your Masternodes on https://bankittninja.pl/masternodes.html
 
 _Hint: Bookmark it, you definitely will be using this site a lot._

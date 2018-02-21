@@ -49,8 +49,8 @@ EXTRA_LIBRARIES += libbitcoin_zmq.a
 endif
 
 if BUILD_BITCOIN_LIBS
-lib_LTLIBRARIES = libbukakeconsensus.la
-LIBBITCOIN_CONSENSUS=libbukakeconsensus.la
+lib_LTLIBRARIES = libbankittconsensus.la
+LIBBITCOIN_CONSENSUS=libbankittconsensus.la
 else
 LIBBITCOIN_CONSENSUS=
 endif
@@ -60,15 +60,15 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += bukaked
+  bin_PROGRAMS += bankittd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += bukake-cli bukake-tx
+  bin_PROGRAMS += bankitt-cli bankitt-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# bukake core #
+# bankitt core #
 BITCOIN_CORE_H = \
   addrdb.h \
   activemasternode.h \
@@ -207,7 +207,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between bukaked and bukake-qt
+# server: shared between bankittd and bankitt-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -271,7 +271,7 @@ libbitcoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between bukaked and bukake-qt, but only linked
+# wallet: shared between bankittd and bankitt-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -344,7 +344,7 @@ crypto_libbitcoin_crypto_a_SOURCES += \
 	crypto/neoscrypt.h \
   crypto/sph_types.h
 
-# common: shared between bukaked, and bukake-qt and non-server tools
+# common: shared between bankittd, and bankitt-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -405,7 +405,7 @@ if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between bukake-cli and bukake-qt
+# cli: shared between bankitt-cli and bankitt-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -416,16 +416,16 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-bukaked_SOURCES = bukaked.cpp
-bukaked_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-bukaked_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bukaked_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+bankittd_SOURCES = bankittd.cpp
+bankittd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+bankittd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+bankittd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-bukaked_SOURCES += bukaked-res.rc
+bankittd_SOURCES += bankittd-res.rc
 endif
 
-bukaked_LDADD = \
+bankittd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -436,56 +436,56 @@ bukaked_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-bukaked_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+bankittd_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-bukaked_LDADD += libbitcoin_wallet.a
+bankittd_LDADD += libbitcoin_wallet.a
 endif
 
-bukaked_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+bankittd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 
-# bukake-cli binary #
-bukake_cli_SOURCES = bukake-cli.cpp
-bukake_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-bukake_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bukake_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# bankitt-cli binary #
+bankitt_cli_SOURCES = bankitt-cli.cpp
+bankitt_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+bankitt_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+bankitt_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-bukake_cli_SOURCES += bukake-cli-res.rc
+bankitt_cli_SOURCES += bankitt-cli-res.rc
 endif
 
-bukake_cli_LDADD = \
+bankitt_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL)
-bukake_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+bankitt_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# bukake-tx binary #
-bukake_tx_SOURCES = bukake-tx.cpp
-bukake_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-bukake_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bukake_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# bankitt-tx binary #
+bankitt_tx_SOURCES = bankitt-tx.cpp
+bankitt_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+bankitt_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+bankitt_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-bukake_tx_SOURCES += bukake-tx-res.rc
+bankitt_tx_SOURCES += bankitt-tx-res.rc
 endif
 
-bukake_tx_LDADD = \
+bankitt_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-bukake_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+bankitt_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
-# bukakeconsensus library #
+# bankittconsensus library #
 if BUILD_BITCOIN_LIBS
-include_HEADERS = script/bukakeconsensus.h
-libbukakeconsensus_la_SOURCES = \
+include_HEADERS = script/bankittconsensus.h
+libbankittconsensus_la_SOURCES = \
   crypto/hmac_sha512.cpp \
   crypto/ripemd160.cpp \
   crypto/sha1.cpp \
@@ -494,20 +494,20 @@ libbukakeconsensus_la_SOURCES = \
   hash.cpp \
   primitives/transaction.cpp \
   pubkey.cpp \
-  script/bukakeconsensus.cpp \
+  script/bankittconsensus.cpp \
   script/interpreter.cpp \
   script/script.cpp \
   uint256.cpp \
   utilstrencodings.cpp
 
 if GLIBC_BACK_COMPAT
-  libbukakeconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libbankittconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libbukakeconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libbukakeconsensus_la_LIBADD = $(LIBSECP256K1)
-libbukakeconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
-libbukakeconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libbankittconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libbankittconsensus_la_LIBADD = $(LIBSECP256K1)
+libbankittconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
+libbankittconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #

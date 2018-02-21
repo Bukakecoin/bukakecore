@@ -50,7 +50,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "Bukake"
-#define QAPP_ORG_DOMAIN "bukake.org"
+#define QAPP_ORG_DOMAIN "bankitt.org"
 #define QAPP_APP_NAME_DEFAULT "Bukake-Qt"
 #define QAPP_APP_NAME_TESTNET "Bukake-Qt-testnet"
 

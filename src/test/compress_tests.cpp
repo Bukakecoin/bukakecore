@@ -4,7 +4,7 @@
 
 #include "compressor.h"
 #include "util.h"
-#include "test/test_bukake.h"
+#include "test/test_bankitt.h"
 
 #include <stdint.h>
 
