@@ -123,7 +123,7 @@ public:
 };
 
 /**
- * Bukake RPC command dispatcher.
+ * Bankitt RPC command dispatcher.
  */
 class CRPCTable
 {

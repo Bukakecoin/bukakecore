@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Bukake Core developers
+// Copyright (c) 2014-2017 The Bankitt Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -51,7 +51,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Bukake Core strat 30/01/2018";
+    const char* pszTimestamp = "Bankitt Core strat 30/01/2018";
     const CScript genesisOutputScript = CScript() << ParseHex("049caeb38afaa6465a1fd3b8d8d29ad1a141b4f94f925c9d8a1baab232cfa35319a325cfadd7aa2b5ca717e4117b6cc8b1a88a1e28abbf0668a3a4e7f923aebbfc") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -92,8 +92,8 @@ public:
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x001");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 60 * 60; // Bukake: 1 day
-        consensus.nPowTargetSpacing = 1 * 60; // Bukake: 1 minutes
+        consensus.nPowTargetTimespan = 60 * 60; // Bankitt: 1 day
+        consensus.nPowTargetSpacing = 1 * 60; // Bankitt: 1 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
@@ -145,18 +145,18 @@ public:
         vSeeds.push_back(CDNSSeedData("bankitt.xyz", "dnsseed.bankitt.xyz"));
 
 
-        // Bukake addresses start with 'S'
+        // Bankitt addresses start with 'S'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,26);
-        // Bukake script addresses start with '7'
+        // Bankitt script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,10);
-        // Bukake private keys start with '7' or 'X'
+        // Bankitt private keys start with '7' or 'X'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,198);
-        // Bukake BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Bankitt BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // Bukake BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Bankitt BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-        // Bukake BIP44 coin type is '5'
+        // Bankitt BIP44 coin type is '5'
         nExtCoinType = 5;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -213,8 +213,8 @@ public:
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x001");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Bukake: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Bukake: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Bankitt: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Bankitt: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
@@ -261,18 +261,18 @@ public:
         //vSeeds.push_back(CDNSSeedData("bankitt.network", "testnet.dnsseed.bankitt.network"));
 
 
-        // Testnet Bukake addresses start with 'y'
+        // Testnet Bankitt addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Testnet Bukake script addresses start with '8' or '9'
+        // Testnet Bankitt script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Bukake BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Bankitt BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Bukake BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Bankitt BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Testnet Bukake BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Bankitt BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -327,8 +327,8 @@ public:
         consensus.BIP34Height = -1; // BIP34 has not necessarily activated on regtest
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Bukake: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Bukake: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Bankitt: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Bankitt: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
@@ -381,18 +381,18 @@ public:
             0,
             0
         };
-        // Regtest Bukake addresses start with 'y'
+        // Regtest Bankitt addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Regtest Bukake script addresses start with '8' or '9'
+        // Regtest Bankitt script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Regtest Bukake BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Bankitt BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Bukake BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Bankitt BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Regtest Bukake BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Bankitt BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
    }
 };

@@ -1,7 +1,7 @@
-// Copyright (c) 2014-2017 The Bukake Core developers
+// Copyright (c) 2014-2017 The Bankitt Core developers
 // Distributed under the MIT software license, see the accompanying
-#ifndef BUKAKE_HDCHAIN_H
-#define BUKAKE_HDCHAIN_H
+#ifndef BANKITT_HDCHAIN_H
+#define BANKITT_HDCHAIN_H
 
 #include "key.h"
 #include "sync.h"
@@ -149,4 +149,4 @@ public:
     std::string GetKeyPath() const;
 };
 
-#endif // BUKAKE_HDCHAIN_H
+#endif // BANKITT_HDCHAIN_H

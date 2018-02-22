@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Bukake Core developers
+// Copyright (c) 2014-2017 The Bankitt Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include "privatesend-client.h"
@@ -21,7 +21,7 @@ CPrivateSendClient privateSendClient;
 void CPrivateSendClient::ProcessMessage(CNode* pfrom, std::string& strCommand, CDataStream& vRecv, CConnman& connman)
 {
     if(fMasterNode) return;
-    if(fLiteMode) return; // ignore all Bukake related functionality
+    if(fLiteMode) return; // ignore all Bankitt related functionality
     if(!masternodeSync.IsBlockchainSynced()) return;
 
     if(strCommand == NetMsgType::DSQUEUE) {
@@ -1415,7 +1415,7 @@ void CPrivateSendClient::UpdatedBlockTip(const CBlockIndex *pindex)
 //TODO: Rename/move to core
 void ThreadCheckPrivateSendClient(CConnman& connman)
 {
-    if(fLiteMode) return; // disable all Bukake specific functionality
+    if(fLiteMode) return; // disable all Bankitt specific functionality
 
     static bool fOneThread;
     if(fOneThread) return;

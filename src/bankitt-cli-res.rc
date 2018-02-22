@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Bukake"
-            VALUE "FileDescription",    "bankitt-cli (JSON-RPC client for Bukake Core)"
+            VALUE "CompanyName",        "Bankitt"
+            VALUE "FileDescription",    "bankitt-cli (JSON-RPC client for Bankitt Core)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "bankitt-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR

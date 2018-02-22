@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Bukake"
-            VALUE "FileDescription",    "bankittd (Bukake node with a JSON-RPC server)"
+            VALUE "CompanyName",        "Bankitt"
+            VALUE "FileDescription",    "bankittd (Bankitt node with a JSON-RPC server)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "bankittd"
             VALUE "LegalCopyright",     COPYRIGHT_STR

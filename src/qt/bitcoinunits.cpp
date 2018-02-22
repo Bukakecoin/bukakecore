@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Bukake Core developers
+// Copyright (c) 2014-2017 The Bankitt Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -72,10 +72,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case BKT: return QString("Bukake");
-            case mBKT: return QString("Milli-Bukake (1 / 1" THIN_SP_UTF8 "000)");
-            case uBKT: return QString("Micro-Bukake (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-Bukake (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case BKT: return QString("Bankitt");
+            case mBKT: return QString("Milli-Bankitt (1 / 1" THIN_SP_UTF8 "000)");
+            case uBKT: return QString("Micro-Bankitt (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-Bankitt (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -83,10 +83,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case BKT: return QString("TestBukakes");
-            case mBKT: return QString("Milli-TestBukake (1 / 1" THIN_SP_UTF8 "000)");
-            case uBKT: return QString("Micro-TestBukake (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestBukake (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case BKT: return QString("TestBankitts");
+            case mBKT: return QString("Milli-TestBankitt (1 / 1" THIN_SP_UTF8 "000)");
+            case uBKT: return QString("Micro-TestBankitt (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-TestBankitt (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }

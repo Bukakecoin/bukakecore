@@ -1,11 +1,11 @@
-Bukake Core 0.12.1
+Bankitt Core 0.12.1
 =====================
 
-This is the official reference wallet for Bukake digital currency and comprises the backbone of the Bukake peer-to-peer network. You can [download Bukake Core](https://www.bankitt.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Bankitt digital currency and comprises the backbone of the Bankitt peer-to-peer network. You can [download Bankitt Core](https://www.bankitt.org/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Bukake on your native platform.
+The following are some helpful notes on how to run Bankitt on your native platform.
 
 ### Unix
 
@@ -20,18 +20,18 @@ Unpack the files into a directory, and then run bankitt-qt.exe.
 
 ### OS X
 
-Drag Bukake-Qt to your applications folder, and then run Bukake-Qt.
+Drag Bankitt-Qt to your applications folder, and then run Bankitt-Qt.
 
 ### Need Help?
 
-* See the [Bukake documentation](https://bankittpay.atlassian.net/wiki/display/DOC)
+* See the [Bankitt documentation](https://bankittpay.atlassian.net/wiki/display/DOC)
 for help and more information.
 * Ask for help on [#bankittpay](http://webchat.freenode.net?channels=bankittpay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=bankittpay).
-* Ask for help on the [BukakeTalk](https://bankitttalk.org/) forums.
+* Ask for help on the [BankittTalk](https://bankitttalk.org/) forums.
 
 Building
 ---------------------
-The following are developer notes on how to build Bukake Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Bankitt Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -41,7 +41,7 @@ The following are developer notes on how to build Bukake Core on your native pla
 
 Development
 ---------------------
-The Bukake Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Bankitt Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -57,7 +57,7 @@ The Bukake Core repo's [root README](/README.md) contains relevant information o
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on the [BukakeTalk](https://bankitttalk.org/) forums, in the Development & Technical Discussion board.
+* Discuss on the [BankittTalk](https://bankitttalk.org/) forums, in the Development & Technical Discussion board.
 * Discuss on [#bankittpay](http://webchat.freenode.net/?channels=bankittpay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=bankittpay).
 
 ### Miscellaneous

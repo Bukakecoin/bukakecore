@@ -32,10 +32,10 @@ Package: bankittd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Bukake is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Bukake uses peer-to-peer
+ Bankitt is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Bankitt uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Bukake Core
+ and issuing money are carried out collectively by the network. Bankitt Core
  is the name of the open source software which enables the use of this currency.
  .
  This package provides the daemon, bankittd, and the CLI tool
@@ -45,22 +45,22 @@ Package: bankitt-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Bukake is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Bukake uses peer-to-peer
+ Bankitt is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Bankitt uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Bukake Core
+ and issuing money are carried out collectively by the network. Bankitt Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides Bukake-Qt, a GUI for Bukake based on Qt.
+ This package provides Bankitt-Qt, a GUI for Bankitt based on Qt.
 
 Package: bankitt-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Bukake is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Bukake uses peer-to-peer
+ Bankitt is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Bankitt uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Bukake Core
+ and issuing money are carried out collectively by the network. Bankitt Core
  is the name of the open source software which enables the use of this currency.
  .
  This package provides bankitt-tx, a command-line transaction creation

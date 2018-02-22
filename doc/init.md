@@ -68,9 +68,9 @@ can then be controlled by group membership.
 3b) Mac OS X
 
 Binary:              `/usr/local/bin/bankittd`  
-Configuration file:  `~/Library/Application Support/BukakeCore/bankitt.conf`  
-Data directory:      `~/Library/Application Support/BukakeCore`
-Lock file:           `~/Library/Application Support/BukakeCore/.lock`
+Configuration file:  `~/Library/Application Support/BankittCore/bankitt.conf`  
+Data directory:      `~/Library/Application Support/BankittCore`
+Lock file:           `~/Library/Application Support/BankittCore/.lock`
 
 4. Installing Service Configuration
 -----------------------------------
@@ -104,7 +104,7 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 Copy bankittd.init to /etc/init.d/bankittd. Test by running `service bankittd start`.
 
 Using this script, you can adjust the path and flags to the bankittd program by
-setting the BUKAKED and FLAGS environment variables in the file
+setting the BANKITTD and FLAGS environment variables in the file
 /etc/sysconfig/bankittd. You can also use the DAEMONOPTS environment variable here.
 
 4e) Mac OS X

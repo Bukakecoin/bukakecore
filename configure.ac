@@ -6,7 +6,7 @@ define(_CLIENT_VERSION_REVISION, 0)
 define(_CLIENT_VERSION_BUILD, 1)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2018)
-AC_INIT([Bukake Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/bankittpay/bankitt/issues],[bankittcore])
+AC_INIT([Bankitt Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/bankittpay/bankitt/issues],[bankittcore])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/bankitt-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
@@ -14,9 +14,9 @@ AC_CONFIG_MACRO_DIR([build-aux/m4])
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef BUKAKE_CONFIG_H])
-AH_TOP([#define BUKAKE_CONFIG_H])
-AH_BOTTOM([#endif //BUKAKE_CONFIG_H])
+AH_TOP([#ifndef BANKITT_CONFIG_H])
+AH_TOP([#define BANKITT_CONFIG_H])
+AH_BOTTOM([#endif //BANKITT_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME

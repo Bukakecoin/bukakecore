@@ -1,23 +1,23 @@
-Bukake Core staging tree 0.12.1
+Bankitt Core staging tree 0.12.1
 ===============================
 
-What is Bukake?
+What is Bankitt?
 ----------------
 
-Bukake is an experimental new digital currency that enables anonymous, instant
-payments to anyone, anywhere in the world. Bukake uses peer-to-peer technology
+Bankitt is an experimental new digital currency that enables anonymous, instant
+payments to anyone, anywhere in the world. Bankitt uses peer-to-peer technology
 to operate with no central authority: managing transactions and issuing money
-are carried out collectively by the network. Bukake Core is the name of the open
+are carried out collectively by the network. Bankitt Core is the name of the open
 source software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Bukake Core software, see https://www.bankitt.org/get-bankitt/.
+the Bankitt Core software, see https://www.bankitt.org/get-bankitt/.
 
 
 License
 -------
 
-Bukake Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Bankitt Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
@@ -25,7 +25,7 @@ Development Process
 
 The `master` branch is meant to be stable. Development is normally done in separate branches.
 [Tags](https://github.com/bankittpay/bankitt/tags) are created to indicate new official,
-stable release versions of Bukake Core.
+stable release versions of Bankitt Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -60,7 +60,7 @@ not straightforward.
 
 Info
 -------
-Name: Bukake
+Name: Bankitt
 Tiker: BKT
 Algo: neoscrypt
 BlockTime: 1 min

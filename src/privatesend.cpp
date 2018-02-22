@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Bukake Core developers
+// Copyright (c) 2014-2017 The Bankitt Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include "privatesend.h"
@@ -303,10 +303,10 @@ int CPrivateSend::GetDenominations(const std::vector<CTxOut>& vecTxOut, bool fSi
 bool CPrivateSend::GetDenominationsBits(int nDenom, std::vector<int> &vecBitsRet)
 {
     // ( bit on if present, 4 denominations example )
-    // bit 0 - 100BUKAKE+1
-    // bit 1 - 10BUKAKE+1
-    // bit 2 - 1BUKAKE+1
-    // bit 3 - .1BUKAKE+1
+    // bit 0 - 100BANKITT+1
+    // bit 1 - 10BANKITT+1
+    // bit 2 - 1BANKITT+1
+    // bit 3 - .1BANKITT+1
 
     int nMaxDenoms = vecStandardDenominations.size();
 
@@ -420,7 +420,7 @@ void CPrivateSend::SyncTransaction(const CTransaction& tx, const CBlock* pblock)
 //TODO: Rename/move to core
 void ThreadCheckPrivateSend(CConnman& connman)
 {
-    if(fLiteMode) return; // disable all Bukake specific functionality
+    if(fLiteMode) return; // disable all Bankitt specific functionality
 
     static bool fOneThread;
     if(fOneThread) return;

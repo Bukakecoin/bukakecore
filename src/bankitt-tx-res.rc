@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Bukake"
-            VALUE "FileDescription",    "bankitt-tx (CLI Bukake transaction editor utility)"
+            VALUE "CompanyName",        "Bankitt"
+            VALUE "FileDescription",    "bankitt-tx (CLI Bankitt transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "bankitt-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR

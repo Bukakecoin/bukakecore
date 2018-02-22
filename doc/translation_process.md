@@ -1,14 +1,14 @@
 Translations
 ============
 
-The Bukake Core project has been designed to support multiple localisations. This makes adding new phrases, and completely new languages easily achievable. For managing all application translations, Bukake Core makes use of the Transifex online translation management tool.
+The Bankitt Core project has been designed to support multiple localisations. This makes adding new phrases, and completely new languages easily achievable. For managing all application translations, Bankitt Core makes use of the Transifex online translation management tool.
 
 ### Helping to translate (using Transifex)
 Transifex is setup to monitor the Github repo for updates, and when code containing new translations is found, Transifex will process any changes. It may take several hours after a pull-request has been merged, to appear in the Transifex web interface.
 
-Multiple language support is critical in assisting Bukake’s global adoption, and growth. One of Bukake’s greatest strengths is cross-boarder money transfers, any help making that easier is greatly appreciated.
+Multiple language support is critical in assisting Bankitt’s global adoption, and growth. One of Bankitt’s greatest strengths is cross-boarder money transfers, any help making that easier is greatly appreciated.
 
-See the [Transifex Bukake project](https://www.transifex.com/projects/p/bankitt/) to assist in translations. You should also join the translation mailing list for announcements - see details below.
+See the [Transifex Bankitt project](https://www.transifex.com/projects/p/bankitt/) to assist in translations. You should also join the translation mailing list for announcements - see details below.
 
 ### Writing code with translations
 We use automated scripts to help extract translations in both Qt, and non-Qt source files. It is rarely necessary to manually edit the files in `src/qt/locale/`. The translation source files must adhere to the following format:
@@ -44,7 +44,7 @@ git commit
 ### Creating a Transifex account
 Visit the [Transifex Signup](https://www.transifex.com/signup/) page to create an account. Take note of your username and password, as they will be required to configure the command-line tool.
 
-You can find the Bukake translation project at [https://www.transifex.com/projects/p/bankitt/](https://www.transifex.com/projects/p/bankitt/).
+You can find the Bankitt translation project at [https://www.transifex.com/projects/p/bankitt/](https://www.transifex.com/projects/p/bankitt/).
 
 ### Installing the Transifex client command-line tool
 The client it used to fetch updated translations. If you are having problems, or need more details, see [http://docs.transifex.com/developer/client/setup](http://docs.transifex.com/developer/client/setup)
@@ -69,7 +69,7 @@ username = USERNAME
 
 Please see [http://docs.transifex.com/developer/client/setup#windows](http://docs.transifex.com/developer/client/setup#windows) for details on installation.
 
-The Transifex Bukake project config file is included as part of the repo. It can be found at `.tx/config`, however you shouldn’t need change anything.
+The Transifex Bankitt project config file is included as part of the repo. It can be found at `.tx/config`, however you shouldn’t need change anything.
 
 ### Synchronising translations
 To assist in updating translations, we have created a script to help.

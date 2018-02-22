@@ -11,7 +11,7 @@ When a "Transaction Lock" occurs the hash of the related transaction is broadcas
 * `zmqpubrawtxlock`: publishes the raw transaction when locked via InstantSend
 * `zmqpubhashtxlock`: publishes the transaction hash when locked via InstantSend
 
-This mechanism has been integrated into Bitcore-Node-Bukake which allows for notification to be broadcast through Insight API in one of two ways:
+This mechanism has been integrated into Bitcore-Node-Bankitt which allows for notification to be broadcast through Insight API in one of two ways:
 * WebSocket: [https://github.com/bankittpay/insight-api-bankitt#web-socket-api](https://github.com/bankittpay/insight-api-bankitt#web-socket-api)
 * API: [https://github.com/bankittpay/insight-api-bankitt#instantsend-transactions](https://github.com/bankittpay/insight-api-bankitt#instantsend-transactions)
 
@@ -27,13 +27,13 @@ When a wallet InstantSend transaction is successfully locked a shell command pro
 
 Details pertaining to an observed "Transaction Lock" can also be retrieved through RPC, it’s important however to understand the underlying mechanism.
 
-By default, the Bukake Core daemon will launch using the following constant:
+By default, the Bankitt Core daemon will launch using the following constant:
 
 ```
 static const int DEFAULT_INSTANTSEND_DEPTH = 5;
 ```
 
-This value can be overridden by passing the following argument to the Bukake Core daemon:
+This value can be overridden by passing the following argument to the Bankitt Core daemon:
 
 ```
 -instantsenddepth=<n>

@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Bukake Core developers
+// Copyright (c) 2014-2017 The Bankitt Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -104,7 +104,7 @@ namespace boost {
 
 using namespace std;
 
-//Bukake only features
+//Bankitt only features
 bool fMasterNode = false;
 bool fLiteMode = false;
 /**
@@ -271,7 +271,7 @@ bool LogAcceptCategory(const char* category)
             const vector<string>& categories = mapMultiArgs["-debug"];
             ptrCategory.reset(new set<string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
-            // "bankitt" is a composite category enabling all Bukake-related debug output
+            // "bankitt" is a composite category enabling all Bankitt-related debug output
             if(ptrCategory->count(string("bankitt"))) {
                 ptrCategory->insert(string("privatesend"));
                 ptrCategory->insert(string("instantsend"));
@@ -516,13 +516,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\BukakeCore
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\BukakeCore
-    // Mac: ~/Library/Application Support/BukakeCore
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\BankittCore
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\BankittCore
+    // Mac: ~/Library/Application Support/BankittCore
     // Unix: ~/.bankittcore
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "BukakeCore";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "BankittCore";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -532,7 +532,7 @@ boost::filesystem::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/BukakeCore";
+    return pathRet / "Library/Application Support/BankittCore";
 #else
     // Unix
     return pathRet / ".bankittcore";

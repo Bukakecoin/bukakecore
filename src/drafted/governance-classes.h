@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Bukake Core developers
+// Copyright (c) 2014-2017 The Bankitt Core developers
 
 /*
  * FIELDS AND CLASSIFICATION
@@ -45,7 +45,7 @@
  * =========================
  *
  *   // network
- *   CBukakeNetwork lvl, network-type, network-status, network-error, milestone-status*
+ *   CBankittNetwork lvl, network-type, network-status, network-error, milestone-status*
  *   CCategory lvl, category-type, status, status-error
  *   CNetworkGlobalVariable lvl, global-type, status, status-error
  *   // base: actor
@@ -79,7 +79,7 @@
  *  TREE STRUCTURE
  *  ===========================================
  * 
- *  BUKAKE NETWORK (ROOT)
+ *  BANKITT NETWORK (ROOT)
  *      -> NETWORK GLOBOLS
  *          -> SWITCHES, SETTINGS
  *      -> CATEGORIES
@@ -130,7 +130,7 @@ public:
 };
 
 // // root node
-class CBukakeNetwork : public CGovernanceObject
+class CBankittNetwork : public CGovernanceObject
 {
 private:
     std::string strName;
@@ -138,7 +138,7 @@ private:
 
 
 public:
-    CBukakeNetwork(UniValue objIn)
+    CBankittNetwork(UniValue objIn)
     {
         strName = objIn["name"].get_str();
         strURL = objIn["name"].get_str();
@@ -174,9 +174,9 @@ public:
 
 };
 
-// // can be under: BukakeNetwork
+// // can be under: BankittNetwork
 // //   -- signature requirements : Key1(User)
-// class CBukakeNetworkVariable : public CGovernanceObject
+// class CBankittNetworkVariable : public CGovernanceObject
 // {
 // private:
 
@@ -279,7 +279,7 @@ public:
 //     // isRootCategory()
 //     // {
 //     //     // root categories won't have categories as parents
-//     //     return (IsType() == BukakeNetwork);
+//     //     return (IsType() == BankittNetwork);
 //     // }
 
 //     // isSubcategoryOf(std::string strParentName)

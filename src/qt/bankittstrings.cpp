@@ -42,7 +42,7 @@ QT_TRANSLATE_NOOP("bankitt-core", ""
 "notation for IPv6. This option can be specified multiple times (default: "
 "bind to all interfaces)"),
 QT_TRANSLATE_NOOP("bankitt-core", ""
-"Cannot obtain a lock on data directory %s. Bukake Core is probably already "
+"Cannot obtain a lock on data directory %s. Bankitt Core is probably already "
 "running."),
 QT_TRANSLATE_NOOP("bankitt-core", ""
 "Create new files with system default permissions, instead of umask 077 (only "
@@ -51,7 +51,7 @@ QT_TRANSLATE_NOOP("bankitt-core", ""
 "Delete all wallet transactions and only recover those parts of the "
 "blockchain through -rescan on startup"),
 QT_TRANSLATE_NOOP("bankitt-core", ""
-"Disable all Bukake specific functionality (Masternodes, PrivateSend, "
+"Disable all Bankitt specific functionality (Masternodes, PrivateSend, "
 "InstantSend, Governance) (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("bankitt-core", ""
 "Discover own IP addresses (default: 1 when listening and no -externalip or -"
@@ -158,7 +158,7 @@ QT_TRANSLATE_NOOP("bankitt-core", ""
 "Output debugging information (default: %u, supplying <category> is optional)"),
 QT_TRANSLATE_NOOP("bankitt-core", ""
 "Please check that your computer's date and time are correct! If your clock "
-"is wrong Bukake Core will not work properly."),
+"is wrong Bankitt Core will not work properly."),
 QT_TRANSLATE_NOOP("bankitt-core", ""
 "PrivateSend uses exact denominated amounts to send funds, you might simply "
 "need to anonymize some more coins."),
@@ -221,7 +221,7 @@ QT_TRANSLATE_NOOP("bankitt-core", ""
 "Tries to keep outbound traffic under the given target (in MiB per 24h), 0 = "
 "no limit (default: %d)"),
 QT_TRANSLATE_NOOP("bankitt-core", ""
-"Unable to bind to %s on this computer. Bukake Core is probably already running."),
+"Unable to bind to %s on this computer. Bankitt Core is probably already running."),
 QT_TRANSLATE_NOOP("bankitt-core", ""
 "Unable to locate enough PrivateSend denominated funds for this transaction."),
 QT_TRANSLATE_NOOP("bankitt-core", ""
@@ -333,7 +333,7 @@ QT_TRANSLATE_NOOP("bankitt-core", "Connect to KeePassHttp on port <port> (defaul
 QT_TRANSLATE_NOOP("bankitt-core", "Connect to a node to retrieve peer addresses, and disconnect"),
 QT_TRANSLATE_NOOP("bankitt-core", "Connection options:"),
 QT_TRANSLATE_NOOP("bankitt-core", "Copyright (C) 2009-%i The Bitcoin Core Developers"),
-QT_TRANSLATE_NOOP("bankitt-core", "Copyright (C) 2014-%i The Bukake Core Developers"),
+QT_TRANSLATE_NOOP("bankitt-core", "Copyright (C) 2014-%i The Bankitt Core Developers"),
 QT_TRANSLATE_NOOP("bankitt-core", "Corrupted block database detected"),
 QT_TRANSLATE_NOOP("bankitt-core", "Could not parse masternode.conf"),
 QT_TRANSLATE_NOOP("bankitt-core", "Debugging/Testing options:"),
@@ -358,7 +358,7 @@ QT_TRANSLATE_NOOP("bankitt-core", "Error loading %s: You can't disable HD on a a
 QT_TRANSLATE_NOOP("bankitt-core", "Error loading block database"),
 QT_TRANSLATE_NOOP("bankitt-core", "Error loading wallet.dat"),
 QT_TRANSLATE_NOOP("bankitt-core", "Error loading wallet.dat: Wallet corrupted"),
-QT_TRANSLATE_NOOP("bankitt-core", "Error loading wallet.dat: Wallet requires newer version of Bukake Core"),
+QT_TRANSLATE_NOOP("bankitt-core", "Error loading wallet.dat: Wallet requires newer version of Bankitt Core"),
 QT_TRANSLATE_NOOP("bankitt-core", "Error opening block database"),
 QT_TRANSLATE_NOOP("bankitt-core", "Error reading from database, shutting down."),
 QT_TRANSLATE_NOOP("bankitt-core", "Error"),
@@ -385,7 +385,7 @@ QT_TRANSLATE_NOOP("bankitt-core", "Incompatible mode."),
 QT_TRANSLATE_NOOP("bankitt-core", "Incompatible version."),
 QT_TRANSLATE_NOOP("bankitt-core", "Incorrect or no genesis block found. Wrong datadir for network?"),
 QT_TRANSLATE_NOOP("bankitt-core", "Information"),
-QT_TRANSLATE_NOOP("bankitt-core", "Initialization sanity check failed. Bukake Core is shutting down."),
+QT_TRANSLATE_NOOP("bankitt-core", "Initialization sanity check failed. Bankitt Core is shutting down."),
 QT_TRANSLATE_NOOP("bankitt-core", "Input is not valid."),
 QT_TRANSLATE_NOOP("bankitt-core", "InstantSend options:"),
 QT_TRANSLATE_NOOP("bankitt-core", "Insufficient funds."),
@@ -537,7 +537,7 @@ QT_TRANSLATE_NOOP("bankitt-core", "Verifying wallet..."),
 QT_TRANSLATE_NOOP("bankitt-core", "Very low number of keys left: %d"),
 QT_TRANSLATE_NOOP("bankitt-core", "Wallet %s resides outside data directory %s"),
 QT_TRANSLATE_NOOP("bankitt-core", "Wallet is locked."),
-QT_TRANSLATE_NOOP("bankitt-core", "Wallet needed to be rewritten: restart Bukake Core to complete"),
+QT_TRANSLATE_NOOP("bankitt-core", "Wallet needed to be rewritten: restart Bankitt Core to complete"),
 QT_TRANSLATE_NOOP("bankitt-core", "Wallet options:"),
 QT_TRANSLATE_NOOP("bankitt-core", "Wallet window title"),
 QT_TRANSLATE_NOOP("bankitt-core", "Warning"),

@@ -16,9 +16,9 @@ enum GovernanceObjectType {
     ValueOverride = 1, 
 
     // -------------------------------
-    // BukakeNetwork - is the root node
-    BukakeNetwork = 1000,
-    BukakeNetworkVariable = 1001,
+    // BankittNetwork - is the root node
+    BankittNetwork = 1000,
+    BankittNetworkVariable = 1001,
     Category = 1002,
 
     // Actors

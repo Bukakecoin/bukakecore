@@ -62,10 +62,10 @@ for arg in sys.argv[1:]:
 
 #Set env vars
 buildDir = BUILDDIR
-if "BUKAKED" not in os.environ:
-    os.environ["BUKAKED"] = buildDir + '/src/bankittd' + EXEEXT
-if "BUKAKECLI" not in os.environ:
-    os.environ["BUKAKECLI"] = buildDir + '/src/bankitt-cli' + EXEEXT
+if "BANKITTD" not in os.environ:
+    os.environ["BANKITTD"] = buildDir + '/src/bankittd' + EXEEXT
+if "BANKITTCLI" not in os.environ:
+    os.environ["BANKITTCLI"] = buildDir + '/src/bankitt-cli' + EXEEXT
 
 if EXEEXT == ".exe" and "-win" not in opts:
     # https://github.com/bitcoin/bitcoin/commit/d52802551752140cf41f0d9a225a43e84404d3e9
@@ -152,7 +152,7 @@ testScriptsExt = [
     'p2p-acceptblock.py', # NOTE: needs bankitt_hash to pass
     'mempool_packages.py',
     'maxuploadtarget.py',
-    # 'replace-by-fee.py', # RBF is disabled in Bukake Core
+    # 'replace-by-fee.py', # RBF is disabled in Bankitt Core
 ]
 
 def runtests():

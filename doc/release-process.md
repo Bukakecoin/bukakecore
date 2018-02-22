@@ -15,7 +15,7 @@ Check out the source code in the following directory hierarchy.
 	git clone https://github.com/devrandom/gitian-builder.git
 	git clone https://github.com/bankittpay/bankitt.git
 
-### Bukake Core maintainers/release engineers, update (commit) version in sources
+### Bankitt Core maintainers/release engineers, update (commit) version in sources
 
 	pushd ./bankitt
 	contrib/verifysfbinaries/verify.sh
@@ -86,7 +86,7 @@ NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from 
 ```
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Bukake Core for Linux, Windows, and OS X:
+### Build and sign Bankitt Core for Linux, Windows, and OS X:
 
 	./bin/gbuild --commit bankitt=v${VERSION} ../bankitt/contrib/gitian-descriptors/gitian-linux.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bankitt/contrib/gitian-descriptors/gitian-linux.yml
@@ -188,13 +188,13 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
 - Announce the release:
 
-  - Release on Bukake forum: https://www.bankitt.org/forum/topic/official-announcements.54/
+  - Release on Bankitt forum: https://www.bankitt.org/forum/topic/official-announcements.54/
 
-  - Bukake-development mailing list
+  - Bankitt-development mailing list
 
   - Update title of #bankittpay on Freenode IRC
 
-  - Optionally reddit /r/Bukakepay, ... but this will usually sort out itself
+  - Optionally reddit /r/Bankittpay, ... but this will usually sort out itself
 
 - Notify flare so that he can start building [the PPAs](https://launchpad.net/~bankitt.org/+archive/ubuntu/bankitt)
 

@@ -4,22 +4,22 @@
 
 	* means the category has an associated class
 	
-	CBukakeNetwork: BUKAKE NETWORK (ROOT)
+	CBankittNetwork: BANKITT NETWORK (ROOT)
 	has:
 		vector<CNetworkVariable> vecNetworkVariables;
-		vector<CBukakeProject> vecProjects;
+		vector<CBankittProject> vecProjects;
 		vector<CGovernanceObject> vecProposals;
 		vector<CBudgetContract> vecContracts;
 		vector<CBudgetUsers> vecUsers;
 
-	CBukakeProject:
+	CBankittProject:
 	has:
 		name
 		employees
 
 */
 
-	// BUKAKE NETWORK (ROOT)
+	// BANKITT NETWORK (ROOT)
 	// 	-> NETWORK VARIABLE
 	// 		-> switch, setting
 	// 	-> CATEGORIES
@@ -49,7 +49,7 @@
 	// 			-> USER1 (only users are allowed here in this scope)
 	// 			-> USER2
 	// 		-> GROUP2 (EVO)
-	// 			-> VALUEOVERRIDE (STORE=BUKAKEDRIVE)
+	// 			-> VALUEOVERRIDE (STORE=BANKITTDRIVE)
 	// 			-> USER1
 
 	// 	-> COMPANIES

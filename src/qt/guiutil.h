@@ -30,7 +30,7 @@ class QUrl;
 class QWidget;
 QT_END_NAMESPACE
 
-/** Utility functions used by the Bukake Qt UI.
+/** Utility functions used by the Bankitt Qt UI.
  */
 namespace GUIUtil
 {

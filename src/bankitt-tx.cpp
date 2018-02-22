@@ -52,7 +52,7 @@ static int AppInitRawTx(int argc, char* argv[])
     if (argc<2 || mapArgs.count("-?") || mapArgs.count("-h") || mapArgs.count("-help"))
     {
         // First part of help message is specific to this utility
-        std::string strUsage = _("Bukake Core bankitt-tx utility version") + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = _("Bankitt Core bankitt-tx utility version") + " " + FormatFullVersion() + "\n\n" +
             _("Usage:") + "\n" +
               "  bankitt-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded bankitt transaction") + "\n" +
               "  bankitt-tx [options] -create [commands]   " + _("Create hex-encoded bankitt transaction") + "\n" +

@@ -4,7 +4,7 @@ NOTE : 12.1 -- REWRITE
 Masternode Budget API
 =======================
 
-Bukake now supports full decentralized budgets that are paid directly from the blockchain via superblocks once per month.
+Bankitt now supports full decentralized budgets that are paid directly from the blockchain via superblocks once per month.
 
 Budgets go through a series of stages before being paid:
  * prepare - create a special transaction that destroys coins in order to make a proposal
@@ -19,7 +19,7 @@ Budgets go through a series of stages before being paid:
 1. Prepare collateral transaction
 --
 
-In this transaction we prepare collateral for "_cool-project_". This proposal will pay _1200_ BUKAKE, _12_ times over the course of a year totaling _24000_ BUKAKE.
+In this transaction we prepare collateral for "_cool-project_". This proposal will pay _1200_ BANKITT, _12_ times over the course of a year totaling _24000_ BANKITT.
 
 **Warning: if you change any fields within this command, the collateral transaction will become invalid.**
 
@@ -128,7 +128,7 @@ After you get enough votes, execute ```mngovernance projection``` to see if you 
 6. Get paid
 --
 
-When block ```1000000``` is reached you'll receive a payment for ```1200``` BUKAKE to ```y6R9oN12KnB9zydzTLc3LikD9cCjjQzYG7```.
+When block ```1000000``` is reached you'll receive a payment for ```1200``` BANKITT to ```y6R9oN12KnB9zydzTLc3LikD9cCjjQzYG7```.
 
 7. Command list
 --

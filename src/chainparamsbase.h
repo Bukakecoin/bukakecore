@@ -10,7 +10,7 @@
 
 /**
  * CBaseChainParams defines the base parameters (shared between bankitt-cli and bankittd)
- * of a given instance of the Bukake system.
+ * of a given instance of the Bankitt system.
  */
 class CBaseChainParams
 {

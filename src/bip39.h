@@ -21,8 +21,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef BUKAKE_BIP39_H
-#define BUKAKE_BIP39_H
+#ifndef BANKITT_BIP39_H
+#define BANKITT_BIP39_H
 
 #include "support/allocators/secure.h"
 
